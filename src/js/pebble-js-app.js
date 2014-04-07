@@ -14,7 +14,7 @@
     if(!settings) {
       settings = "{}";
     }
-    Pebble.openURL("http://procrash.bplaced.net/settings-2.2.0.html#" + encodeURIComponent(JSON.stringify(settings)));
+    Pebble.openURL("http://procrash.bplaced.net/settings-2.2.1.html#" + encodeURIComponent(JSON.stringify(settings)));
   });
 
   Pebble.addEventListener("webviewclosed", function(e) {

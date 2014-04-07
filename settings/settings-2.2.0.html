@@ -33,51 +33,24 @@
       </div>
 	  
       <div data-role="fieldcontain">
-        <label for="clockStyle">Style:</label>
-        <select name="clockStyle" id="clockStyle">
-          <option value="0">12 Hour Style</option>
-          <option value="1" selected="selected">24 Hour Style</option>
+        <label for="clockStyle">Clock style:</label>
+        <select name="clockStyle" id="clockStyle" data-role="slider">
+          <option value="0">12h</option>
+          <option value="1">24h</option>
         </select>
+      </div>
+	  
+      <div data-role="fieldcontain">
+        <label for="digitSize">Digit size:</label>
+		<input type="range" name="digitSize" id="digitSize" min="2" max="30" value="5" data-show-value="true">
       </div>
 
       <div data-role="fieldcontain">
-        <label for="digitSize" class="select">Digit size:</label>
-        <select name="digitSize" id="digitSize">
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6" selected="selected">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-        </select>
+        <label for="spaceBetweenDigits">Space between digits:</label>
+		<input type="range" name="spaceBetweenDigits" id="spaceBetweenDigits" min="0" max="30" value="5" data-show-value="true">
       </div>
-    </div>
 
-      <div data-role="fieldcontain">
-        <label for="spaceBetweenDigits" class="select">Space between digits:</label>
-        <select name="spaceBetweenDigits" id="spaceBetweenDigits">
-          <option value="2">2</option>
-          <option value="3" selected="selected">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-        </select>
-      </div>
+
     </div>
 
     <div class="ui-body ui-body-b">
@@ -96,13 +69,15 @@
           'digitSize': parseInt($('#digitSize').val(), 10),
           'spaceBetweenDigits': parseInt($('#spaceBetweenDigits').val(), 10)
         }
+		
         return options;
       }
 
       $(function() {
         var settings = decodeURIComponent(window.location.hash.replace(/^#/, ''));
 
-        //console.log('settings:', settings);
+        console.log('settings:', settings);
+		
         if (settings) {
           try {
             settings = JSON.parse(JSON.parse(settings));
@@ -124,23 +99,14 @@
           }
 		  
           if (settings.clockStyle) {
-            $('#clockStyle').find('option[value="' + settings.clockStyle + '"]')
-              .siblings().removeAttr('selected')
-              .end().attr('selected', 'selected')
-              .end().selectmenu("refresh");
+			$('#clockStyle').val(settings.batterySymbol).slider('refresh');
           }
 		  
           if (settings.digitSize) {
-            $('#digitSize').find('option[value="' + settings.digitSize + '"]')
-              .siblings().removeAttr('selected')
-              .end().attr('selected', 'selected')
-              .end().selectmenu("refresh");
+			  $('#digitSize').val(settings.digitSize).slider('refresh');
           }
           if (settings.spaceBetweenDigits) {
-            $('#spaceBetweenDigits').find('option[value="' + settings.spaceBetweenDigits + '"]')
-              .siblings().removeAttr('selected')
-              .end().attr('selected', 'selected')
-              .end().selectmenu("refresh");
+			  $('#spaceBetweenDigits').val(settings.spaceBetweenDigits).slider('refresh');
           }
         }
 

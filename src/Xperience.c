@@ -49,10 +49,10 @@ static double clockFaces[2][6][4][2] =  // calculated Screen coordinates
 	{ // Left
     {{65,68},{0,3},{0,3+DIGIT_THICKNESS},{65-DIGIT_THICKNESS,68}}, // TOP
 
-    {{65-DIGIT_THICKNESS,75},{65,75},{31+DIGIT_THICKNESS/2,140-(31+DIGIT_THICKNESS/2)},{31,140-(31+DIGIT_THICKNESS)}},  // TOP Right, Mid Y is 104
-                                    {{31-DIGIT_THICKNESS/2,140-31-DIGIT_THICKNESS/2},{31,140-31},{0,140},{0,140-DIGIT_THICKNESS}}, // Down Right
-                                    
-    {{DIGIT_THICKNESS+SPACE_BETWEEN_DIGITS,77+SPACE_BETWEEN_DIGITS},{DIGIT_THICKNESS+SPACE_BETWEEN_DIGITS,77+DIGIT_THICKNESS+SPACE_BETWEEN_DIGITS},{31-SPACE_BETWEEN_DIGITS-DIGIT_THICKNESS/2,140-31-SPACE_BETWEEN_DIGITS-DIGIT_THICKNESS/2}, {31-SPACE_BETWEEN_DIGITS,140-(31+DIGIT_THICKNESS)-SPACE_BETWEEN_DIGITS}}, // Middle
+    {{65-DIGIT_THICKNESS,75},{65,75},{32+DIGIT_THICKNESS/2,140-(32+DIGIT_THICKNESS/2)},{32,140-(32+DIGIT_THICKNESS)}},  // TOP Right, Mid Y is 104
+                                    {{32-DIGIT_THICKNESS/2,140-32-DIGIT_THICKNESS/2},{32,140-32},{0,140},{0,140-DIGIT_THICKNESS}}, // Down Right
+                                
+    {{DIGIT_THICKNESS+SPACE_BETWEEN_DIGITS,70+DIGIT_THICKNESS+SPACE_BETWEEN_DIGITS},{DIGIT_THICKNESS+SPACE_BETWEEN_DIGITS,70+DIGIT_THICKNESS+DIGIT_THICKNESS+SPACE_BETWEEN_DIGITS},{32-SPACE_BETWEEN_DIGITS-DIGIT_THICKNESS/2,140-32-SPACE_BETWEEN_DIGITS-DIGIT_THICKNESS/2}, {32-SPACE_BETWEEN_DIGITS,140-(32+DIGIT_THICKNESS)-SPACE_BETWEEN_DIGITS}}, // Middle
     {{0,77}, {0+DIGIT_THICKNESS,77+DIGIT_THICKNESS},{0+DIGIT_THICKNESS,140-2*DIGIT_THICKNESS-SPACE_BETWEEN_DIGITS},{0,140-DIGIT_THICKNESS-SPACE_BETWEEN_DIGITS}}, // Down Left
     {{0,3+DIGIT_THICKNESS+SPACE_BETWEEN_DIGITS}, {0+DIGIT_THICKNESS,3+2*DIGIT_THICKNESS+SPACE_BETWEEN_DIGITS},{0+DIGIT_THICKNESS,70+DIGIT_THICKNESS},{0,70}} // Top Left
 	},
@@ -136,10 +136,10 @@ static void updateDigits(int newDigitSize, int digitSpacing) {
 		{ // Left
 	    {{65,68},{0,3},{0,3+newDigitSize},{65-newDigitSize,68}}, // TOP
 
-	    {{65-newDigitSize,75},{65,75},{31+newDigitSize/2,140-(31+newDigitSize/2)},{31,140-(31+newDigitSize)}},  // TOP Right, Mid Y is 104
-	                                    {{31-newDigitSize/2,140-31-newDigitSize/2},{31,140-31},{0,140},{0,140-newDigitSize}}, // Down Right
+	    {{65-newDigitSize,75},{65,75},{32+newDigitSize/2,140-(32+newDigitSize/2)},{32,140-(32+newDigitSize)}},  // TOP Right, Mid Y is 104
+	                                    {{32-newDigitSize/2,140-32-newDigitSize/2},{32,140-32},{0,140},{0,140-newDigitSize}}, // Down Right
                                     
-	    {{newDigitSize+digitSpacing,77+digitSpacing},{newDigitSize+digitSpacing,77+newDigitSize+digitSpacing},{31-digitSpacing-newDigitSize/2,140-31-digitSpacing-newDigitSize/2}, {31-digitSpacing,140-(31+newDigitSize)-digitSpacing}}, // Middle
+	    {{newDigitSize+digitSpacing,70+newDigitSize+digitSpacing},{newDigitSize+digitSpacing,70+newDigitSize+newDigitSize+digitSpacing},{32-digitSpacing-newDigitSize/2,140-32-digitSpacing-newDigitSize/2}, {32-digitSpacing,140-(32+newDigitSize)-digitSpacing}}, // Middle
 	    {{0,77}, {0+newDigitSize,77+newDigitSize},{0+newDigitSize,140-2*newDigitSize-digitSpacing},{0,140-newDigitSize-digitSpacing}}, // Down Left
 	    {{0,3+newDigitSize+digitSpacing}, {0+newDigitSize,3+2*newDigitSize+digitSpacing},{0+newDigitSize,70+newDigitSize},{0,70}} // Top Left
 		},

@@ -2,14 +2,19 @@
   "uuid": "3cc5b016-3b2e-4c12-a8f2-f84e52f7fd39",
   "shortName": "Xperience",
   "longName": "Xperience",
-  "companyName": "Procrash",
+  "companyName": "Procrash, Yang Bo",
   "versionCode": 1,
-  "versionLabel": "1.0.0",
+  "versionLabel": "3.0.0",
   "watchapp": {
     "watchface": true
   },
+  "capabilities": ["configurable"],
   "appKeys": {
-    "dummy": 0
+    "bluetoothSymbol": 0,
+    "batterySymbol": 1,
+	"clockStyle": 2,
+    "digitSize": 3,
+    "spaceBetweenDigits": 4
   },
   "resources": {
     "media": []
